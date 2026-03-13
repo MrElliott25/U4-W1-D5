@@ -44,7 +44,7 @@ public class Image extends ElementoMultimediale implements Brightness {
     public void showMenu(){
         do{
             System.out.println("Menù dell'Immagine " + this.title);
-            System.out.println("1. Alza la Luminosità\n 2. Abbassa la Luminosità\n 3. Mostra!\n 0. Esci 😢");
+            System.out.println("1. Alza la Luminosità\n2. Abbassa la Luminosità\n3. Mostra!\n0. Esci 😢");
             System.out.println("Inserisci un numero associato all'operazione per eseguirla");
             int choice = scanner.nextInt();
             switch(choice){

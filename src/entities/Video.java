@@ -67,14 +67,14 @@ public class Video extends ElementoMultimediale implements Playable, Brightness 
 
     public void play(){
         for(int i = 0; i<this.duration; i++){
-            System.out.println("Video: " + this.title + " Volume: " + this.volumeString + " Luminosità: " + brightnessString);
+            System.out.println("Video: " + this.title + " Secondo: " + (i+1) + " Volume: " + this.volumeString + " Luminosità: " + brightnessString);
         }
     }
 
     public void showMenu(){
           do{
             System.out.println("Menù del Video: " + this.title);
-            System.out.println("1. Alza il Volume\n 2. Abbassa il Volume\n 3.Alza la Luminosità\n 4. Abbassa la Luminosità\n 5. Riproduci! 0. Esci 😢");
+            System.out.println("1. Alza il Volume\n2. Abbassa il Volume\n3.Alza la Luminosità\n4. Abbassa la Luminosità\n5. Riproduci!\n0. Esci 😢");
             System.out.println("Inserisci un numero associato all'operazione per eseguirla");
             int choice = scanner.nextInt();
             switch(choice){

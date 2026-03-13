@@ -12,4 +12,8 @@ public abstract class ElementoMultimediale {
     public ElementoMultimediale(String title){
         this.title = title;
     }
+
+    public String getTitle(){
+        return this.title;
+    }
 }

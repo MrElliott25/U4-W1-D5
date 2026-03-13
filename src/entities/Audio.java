@@ -42,14 +42,14 @@ public class Audio extends ElementoMultimediale implements Playable {
 
     public void play(){
         for(int i =0; i<this.duration; i++){
-            System.out.println("Canzone: " + this.title + "Secondo " + i + ": " + this.volumeString);
+            System.out.println("Canzone: " + this.title + " Secondo " + (i+1) + ": " + this.volumeString);
         }
     }
 
     public void showMenu(){
         do{
             System.out.println("Menù dell'Audio " + this.title);
-            System.out.println("1. Alza il Volume\n 2. Abbassa il Volume\n 3. Riproduci!\n 0. Esci 😢");
+            System.out.println("1. Alza il Volume\n2. Abbassa il Volume\n3. Riproduci!\n0. Esci 😢");
             System.out.println("Inserisci un numero associato all'operazione per eseguirla");
             int choice = scanner.nextInt();
             switch(choice){
