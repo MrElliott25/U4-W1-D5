@@ -37,9 +37,35 @@ public class Image extends ElementoMultimediale implements Brightness {
         }
     }
 
-    public void showMenu(){
-
+    public void show(){
+        System.out.println("Immagine: " + this.title + " Luminosità: " + brightnessString);
     }
 
-    public void show(){}
+    public void showMenu(){
+        do{
+            System.out.println("Menù dell'Immagine " + this.title);
+            System.out.println("1. Alza la Luminosità\n 2. Abbassa la Luminosità\n 3. Mostra!\n 0. Esci 😢");
+            System.out.println("Inserisci un numero associato all'operazione per eseguirla");
+            int choice = scanner.nextInt();
+            switch(choice){
+                case 0:
+                    myFlag = false;
+                    break;
+                case 1:
+                    System.out.println("Inserisci un valore del quale ALZARE la Luminosità.");
+                    raiseBrightness(scanner.nextInt());
+                    break;
+                case 2:
+                    System.out.println("Inserisci un valore del quale ABBASSARE la Luminosità (Attenzione! la Luminosità non può essere minore di zero!");
+                    lowerBrightness(scanner.nextInt());
+                    break;
+                case 3:
+                    show();
+                    break;
+                default:
+                    System.out.println("Valore non valido, per piacere inserirne un altro.");
+            }
+        }while(myFlag);
+    }
+
 }

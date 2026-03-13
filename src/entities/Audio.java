@@ -40,6 +40,36 @@ public class Audio extends ElementoMultimediale implements Playable {
     }
 
 
-    public void play(){}
-    public void showMenu(){}
+    public void play(){
+        for(int i =0; i<this.duration; i++){
+            System.out.println("Canzone: " + this.title + "Secondo " + i + ": " + this.volumeString);
+        }
+    }
+
+    public void showMenu(){
+        do{
+            System.out.println("Menù dell'Audio " + this.title);
+            System.out.println("1. Alza il Volume\n 2. Abbassa il Volume\n 3. Riproduci!\n 0. Esci 😢");
+            System.out.println("Inserisci un numero associato all'operazione per eseguirla");
+            int choice = scanner.nextInt();
+            switch(choice){
+                case 0:
+                    myFlag = false;
+                    break;
+                case 1:
+                    System.out.println("Inserisci un valore del quale ALZARE il volume.");
+                    raiseVolume(scanner.nextInt());
+                    break;
+                case 2:
+                    System.out.println("Inserisci un valore del quale ABBASSARE il volume (Attenzione! il volume non può essere minore di zero!");
+                    lowerVolume(scanner.nextInt());
+                    break;
+                case 3:
+                    play();
+                    break;
+                default:
+                    System.out.println("Valore non valido, per piacere inserirne un altro.");
+            }
+        }while(myFlag);
+    }
 }

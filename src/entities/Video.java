@@ -65,6 +65,45 @@ public class Video extends ElementoMultimediale implements Playable, Brightness 
         }
     }
 
-    public void showMenu(){}
-    public void play(){}
+    public void play(){
+        for(int i = 0; i<this.duration; i++){
+            System.out.println("Video: " + this.title + " Volume: " + this.volumeString + " Luminosità: " + brightnessString);
+        }
+    }
+
+    public void showMenu(){
+          do{
+            System.out.println("Menù del Video: " + this.title);
+            System.out.println("1. Alza il Volume\n 2. Abbassa il Volume\n 3.Alza la Luminosità\n 4. Abbassa la Luminosità\n 5. Riproduci! 0. Esci 😢");
+            System.out.println("Inserisci un numero associato all'operazione per eseguirla");
+            int choice = scanner.nextInt();
+            switch(choice){
+                case 0:
+                    myFlag = false;
+                    break;
+                case 1:
+                    System.out.println("Inserisci un valore del quale ALZARE il volume.");
+                    raiseVolume(scanner.nextInt());
+                    break;
+                case 2:
+                    System.out.println("Inserisci un valore del quale ABBASSARE il volume (Attenzione! il volume non può essere minore di zero!");
+                    lowerVolume(scanner.nextInt());
+                    break;
+                case 3:
+                    System.out.println("Inserisci un valore del quale ALZARE la Luminosità.");
+                    raiseBrightness(scanner.nextInt());
+                    break;
+                case 4:
+                    System.out.println("Inserisci un valore del quale ABBASSARE la Luminosità (Attenzione! la Luminosità non può essere minore di zero!");
+                    lowerBrightness(scanner.nextInt());
+                    break;
+                case 5:
+                    play();
+                    break;
+
+                default:
+                    System.out.println("Valore non valido, per piacere inserirne un altro.");
+            }
+        }while(myFlag);
+    }
 }
